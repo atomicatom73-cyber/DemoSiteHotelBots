@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Hotel Santa Fe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --clay:    #C4785A;
+      --sand:    #F2EBE0;
+      --dark:    #1E1A17;
+      --muted:   #7A6E65;
+      --white:   #FDFAF7;
+      --border:  #DDD4C8;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Jost', sans-serif;
+      background: var(--white);
+      color: var(--dark);
+      font-weight: 300;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 3rem;
+      background: rgba(253,250,247,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600;
+      letter-spacing: 0.04em; color: var(--dark);
+      text-decoration: none;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      text-decoration: none; color: var(--muted);
+      font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--clay); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #2B1F17 0%, #4A3020 50%, #C4785A22 100%);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; padding: 6rem 2rem 4rem;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C4785A' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.4;
+    }
+    .hero-tag {
+      font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--clay); margin-bottom: 1.5rem;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 300; color: var(--white);
+      line-height: 1.05; margin-bottom: 1.5rem;
+    }
+    .hero h1 span { color: var(--clay); font-style: italic; }
+    .hero p {
+      font-size: 1rem; color: #C8B8A8;
+      max-width: 480px; line-height: 1.8;
+      margin-bottom: 2.5rem;
+    }
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .btn {
+      padding: 0.85rem 2rem; border-radius: 2px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
+      text-decoration: none; cursor: pointer;
+      transition: all 0.25s; border: none;
+    }
+    .btn-primary { background: var(--clay); color: var(--white); }
+    .btn-primary:hover { background: #B0664A; }
+    .btn-outline {
+      background: transparent; color: var(--white);
+      border: 1px solid rgba(255,255,255,0.3);
+    }
+    .btn-outline:hover { border-color: var(--clay); color: var(--clay); }
+    .hero-scroll {
+      position: absolute; bottom: 2.5rem;
+      font-size: 0.65rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #8A7A6A;
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+    }
+    .scroll-line {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, #8A7A6A, transparent);
+    }
+
+    /* ── SECTION BASE ── */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--clay); margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 300; line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .section-sub {
+      color: var(--muted); font-size: 0.95rem;
+      line-height: 1.8; max-width: 560px;
+    }
+    .divider {
+      width: 48px; height: 1px;
+      background: var(--clay); margin: 2rem 0;
+    }
+
+    /* ── ROOMS ── */
+    .rooms-bg { background: var(--sand); }
+    .rooms-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px; margin-top: 3.5rem;
+    }
+    .room-card {
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.25s;
+    }
+    .room-card:hover { border-color: var(--clay); }
+    .room-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .room-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem; font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+    .room-price {
+      font-size: 0.7rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--clay);
+      margin-bottom: 1rem;
+    }
+    .room-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
+
+    /* ── AMENITIES ── */
+    .amenities-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem; margin-top: 3.5rem;
+    }
+    .amenity {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.5rem; border: 1px solid var(--border);
+    }
+    .amenity-icon { font-size: 1.4rem; flex-shrink: 0; }
+    .amenity-name {
+      font-size: 0.85rem; font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+    .amenity-detail { font-size: 0.78rem; color: var(--muted); }
+
+    /* ── CONCIERGE / BOT ── */
+    .concierge-bg {
+      background: linear-gradient(135deg, #2B1F17 0%, #3D2B1F 100%);
+      color: var(--white);
+    }
+    .concierge-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    .concierge-bg .section-title { color: var(--white); }
+    .concierge-bg .section-sub { color: #B8A898; }
+    .concierge-bg .divider { background: var(--clay); }
+    .concierge-features { list-style: none; margin-top: 2rem; }
+    .concierge-features li {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-size: 0.88rem; color: #C8B8A8;
+      padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .concierge-features li::before {
+      content: '◈'; color: var(--clay); font-size: 0.6rem;
+    }
+    .bot-wrapper {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      height: 520px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+    }
+    .bot-placeholder {
+      text-align: center; color: #8A7A6A;
+      font-size: 0.85rem; line-height: 1.8;
+    }
+    .bot-placeholder span { display: block; font-size: 2rem; margin-bottom: 1rem; }
+
+    /* ── LOCATION ── */
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+      margin-top: 3rem;
+    }
+    .location-list { list-style: none; margin-top: 1.5rem; }
+    .location-list li {
+      display: flex; justify-content: space-between;
+      padding: 0.9rem 0; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
+    }
+    .location-list li span:last-child { color: var(--muted); }
+    .map-placeholder {
+      background: var(--sand);
+      border: 1px solid var(--border);
+      height: 320px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: 0.85rem;
+      border-radius: 2px;
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--dark); color: #8A7A6A;
+      padding: 3rem 2rem;
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; gap: 1rem;
+    }
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; color: var(--white);
+      font-weight: 300; letter-spacing: 0.06em;
+    }
+    footer p { font-size: 0.78rem; line-height: 1.8; }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a {
+      font-size: 0.72rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: #8A7A6A;
+      text-decoration: none; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--clay); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
+      .nav-links { display: none; }
+      .concierge-inner { grid-template-columns: 1fr; }
+      .location-grid { grid-template-columns: 1fr; }
+      .bot-wrapper { height: 420px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Hotel Santa Fe</a>
+    <ul class="nav-links">
+      <li><a href="#rooms">Rooms</a></li>
+      <li><a href="#amenities">Amenities</a></li>
+      <li><a href="#concierge">Concierge</a></li>
+      <li><a href="#location">Location</a></li>
+    </ul>
+    <a href="#rooms" class="btn btn-primary" style="padding:0.6rem 1.4rem;">Book a Room</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="hero-tag">Santa Fe, New Mexico · Est. 2019</p>
+    <h1>A <span>sanctuary</span><br>in the desert</h1>
+    <p>Boutique luxury in the heart of Santa Fe — where southwestern soul meets modern comfort.</p>
+    <div class="hero-btns">
+      <a href="#rooms" class="btn btn-primary">View Rooms</a>
+      <a href="#concierge" class="btn btn-outline">24/7 Concierge</a>
+    </div>
+    <div class="hero-scroll">
+      <div class="scroll-line"></div>
+      Scroll
+    </div>
+  </section>
+
+  <!-- ROOMS -->
+  <section class="rooms-bg" id="rooms">
+    <div class="container">
+      <p class="section-label">Accommodations</p>
+      <h2 class="section-title">Our rooms &amp;<br>suites</h2>
+      <p class="section-sub">Every room is designed to reflect the warmth and texture of the Southwest — handcrafted details, earthy palettes, and views that stay with you.</p>
+      <div class="rooms-grid">
+        <div class="room-card">
+          <div class="room-icon">🌵</div>
+          <div class="room-name">Desert Room</div>
+          <div class="room-price">From $159 / night</div>
+          <p class="room-desc">A cozy queen room with southwest décor, exposed wood beams, terracotta tones, and a rainfall shower. Sleeps 2.</p>
+        </div>
+        <div class="room-card">
+          <div class="room-icon">🌄</div>
+          <div class="room-name">Vista Suite</div>
+          <div class="room-price">From $229 / night</div>
+          <p class="room-desc">King bed with a private balcony overlooking the Sangre de Cristo mountains. Includes a soaking tub and walk-in shower.</p>
+        </div>
+        <div class="room-card">
+          <div class="room-icon">☀️</div>
+          <div class="room-name">Rooftop Penthouse</div>
+          <div class="room-price">From $389 / night</div>
+          <p class="room-desc">Our flagship suite with exclusive rooftop terrace access, panoramic views, and a fully stocked minibar. Perfect for special occasions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AMENITIES -->
+  <section id="amenities">
+    <div class="container">
+      <p class="section-label">The Experience</p>
+      <h2 class="section-title">Everything<br>you need</h2>
+      <div class="divider"></div>
+      <p class="section-sub">All rooms include complimentary breakfast, free high-speed WiFi, and access to our full range of hotel amenities.</p>
+      <div class="amenities-grid">
+        <div class="amenity">
+          <div class="amenity-icon">🏊</div>
+          <div>
+            <div class="amenity-name">Heated Pool</div>
+            <div class="amenity-detail">Open daily 8 AM – 9 PM</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">💆</div>
+          <div>
+            <div class="amenity-name">Full Spa</div>
+            <div class="amenity-detail">Massages, facials &amp; body treatments</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🍳</div>
+          <div>
+            <div class="amenity-name">Free Breakfast</div>
+            <div class="amenity-detail">Served daily 7 – 10:30 AM</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🍹</div>
+          <div>
+            <div class="amenity-name">Rooftop Bar</div>
+            <div class="amenity-detail">Wed – Sun, 4 PM – 11 PM</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🚲</div>
+          <div>
+            <div class="amenity-name">Free Bike Rentals</div>
+            <div class="amenity-detail">Daily 8 AM – 6 PM</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🐾</div>
+          <div>
+            <div class="amenity-name">Pet Friendly</div>
+            <div class="amenity-detail">Up to 2 pets, under 50 lbs</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🅿️</div>
+          <div>
+            <div class="amenity-name">Free Parking</div>
+            <div class="amenity-detail">On-site + EV charging</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">💪</div>
+          <div>
+            <div class="amenity-name">Fitness Room</div>
+            <div class="amenity-detail">Open 24 / 7</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCIERGE / BOT -->
+  <section class="concierge-bg" id="concierge">
+    <div class="container">
+      <div class="concierge-inner">
+        <div>
+          <p class="section-label" style="color:var(--clay)">Virtual Concierge</p>
+          <h2 class="section-title">Your personal<br>assistant,<br><em style="font-style:italic">24 / 7</em></h2>
+          <div class="divider"></div>
+          <p class="section-sub">Our AI concierge is always available — whether it's 2 PM or 2 AM. Ask anything about your stay.</p>
+          <ul class="concierge-features">
+            <li>Check-in &amp; check-out information</li>
+            <li>Room availability &amp; upgrades</li>
+            <li>Spa bookings &amp; dining reservations</li>
+            <li>Local restaurant &amp; activity recommendations</li>
+            <li>Anything else — just ask</li>
+          </ul>
+        </div>
+        <div class="bot-wrapper" id="bot-container">
+          <script type="text/javascript">
+            (function(d, t) {
+                var v = d.createElement(t), s = d.getElementsByTagName(t)[0];
+                v.onload = function() {
+                  window.voiceflow.chat.load({
+                    verify: { projectID: '69ba9d28f7c5119bfd15f7ff' },
+                    url: 'https://general-runtime.voiceflow.com',
+                    versionID: 'production',
+                    voice: {
+                      url: "https://runtime-api.voiceflow.com"
+                    }
+                  });
+                }
+                v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
+            })(document, 'script');
+          </script>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section id="location">
+    <div class="container">
+      <p class="section-label">Find Us</p>
+      <h2 class="section-title">In the heart<br>of Santa Fe</h2>
+      <div class="location-grid">
+        <div>
+          <p class="section-sub">Steps from Canyon Road, the Georgia O'Keeffe Museum, and the best green chile in New Mexico.</p>
+          <ul class="location-list">
+            <li><span>📍 Address</span><span>218 Don Gaspar Ave, Santa Fe NM</span></li>
+            <li><span>📞 Phone</span><span>(505) 555-0192</span></li>
+            <li><span>✉️ Email</span><span>hello@hotelsantafe.com</span></li>
+            <li><span>🕐 Front Desk</span><span>7 AM – 11 PM daily</span></li>
+            <li><span>🅿️ Parking</span><span>Free on-site</span></li>
+          </ul>
+        </div>
+        <div class="map-placeholder">
+          📍 218 Don Gaspar Ave, Santa Fe
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-logo">Hotel Santa Fe</div>
+    <p>218 Don Gaspar Ave · Santa Fe, NM 87501<br>hello@hotelsantafe.com · (505) 555-0192</p>
+    <div class="footer-links">
+      <a href="#rooms">Rooms</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#concierge">Concierge</a>
+      <a href="#location">Location</a>
+    </div>
+    <p style="margin-top:1rem; font-size:0.7rem;">© 2024 Hotel Santa Fe. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
