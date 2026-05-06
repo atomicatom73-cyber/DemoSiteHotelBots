@@ -3,504 +3,262 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Heart of the Southwest Hotel — Tucson, Arizona</title>
-  <meta name="description" content="A boutique luxury hotel in the heart of the Sonoran Desert. Handcrafted Southwestern hospitality, curated dining, and a 24/7 AI concierge."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <title>Hotel Santa Fe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --terracotta: #B5563A;
-      --terracotta-dark: #8E3F28;
-      --sunset:    #E89B5C;
-      --sand:      #F4ECDF;
-      --cream:     #FBF6EE;
-      --ink:       #1C1410;
-      --charcoal:  #2D241D;
-      --muted:     #7A6E62;
-      --border:    #E2D7C5;
-      --gold:      #C9A66B;
+      --clay:    #C4785A;
+      --sand:    #F2EBE0;
+      --dark:    #1E1A17;
+      --muted:   #7A6E65;
+      --white:   #FDFAF7;
+      --border:  #DDD4C8;
     }
 
     html { scroll-behavior: smooth; }
 
     body {
-      font-family: 'Inter', system-ui, sans-serif;
-      background: var(--cream);
-      color: var(--ink);
+      font-family: 'Jost', sans-serif;
+      background: var(--white);
+      color: var(--dark);
       font-weight: 300;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
     }
-
-    a { color: inherit; }
-    img { max-width: 100%; display: block; }
 
     /* ── NAV ── */
     nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
-      padding: 1.1rem 3rem;
-      background: rgba(251, 246, 238, 0.85);
-      backdrop-filter: saturate(180%) blur(14px);
-      -webkit-backdrop-filter: saturate(180%) blur(14px);
-      border-bottom: 1px solid rgba(226, 215, 197, 0.6);
-      transition: padding 0.3s ease;
+      padding: 1.25rem 3rem;
+      background: rgba(253,250,247,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
     }
     .nav-logo {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.45rem; font-weight: 600;
-      letter-spacing: 0.02em; color: var(--ink);
+      font-size: 1.5rem; font-weight: 600;
+      letter-spacing: 0.04em; color: var(--dark);
       text-decoration: none;
-      display: flex; align-items: center; gap: 0.6rem;
     }
-    .nav-logo-mark {
-      width: 28px; height: 28px;
-      background: linear-gradient(135deg, var(--terracotta), var(--sunset));
-      border-radius: 50%;
-      display: inline-flex; align-items: center; justify-content: center;
-      color: var(--cream); font-size: 0.8rem; font-weight: 600;
-      font-family: 'Inter', sans-serif;
-    }
-    .nav-links { display: flex; gap: 2.25rem; list-style: none; }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
     .nav-links a {
-      text-decoration: none; color: var(--charcoal);
-      font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase;
-      font-weight: 400;
+      text-decoration: none; color: var(--muted);
+      font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
       transition: color 0.2s;
-      position: relative;
     }
-    .nav-links a::after {
-      content: ''; position: absolute; left: 0; bottom: -6px;
-      width: 0; height: 1px; background: var(--terracotta);
-      transition: width 0.25s ease;
-    }
-    .nav-links a:hover { color: var(--terracotta); }
-    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: var(--clay); }
 
     /* ── HERO ── */
     .hero {
       min-height: 100vh;
-      position: relative; overflow: hidden;
+      background: linear-gradient(160deg, #2B1F17 0%, #4A3020 50%, #C4785A22 100%);
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
-      text-align: center; padding: 7rem 2rem 5rem;
-      background:
-        radial-gradient(ellipse at 50% 110%, rgba(232, 155, 92, 0.35), transparent 60%),
-        linear-gradient(170deg, #1C1410 0%, #3D241A 45%, #6B3A24 80%, #B5563A 100%);
+      text-align: center; padding: 6rem 2rem 4rem;
+      position: relative; overflow: hidden;
     }
     .hero::before {
       content: '';
       position: absolute; inset: 0;
-      background-image:
-        radial-gradient(circle at 20% 30%, rgba(255,180,120,0.08), transparent 35%),
-        radial-gradient(circle at 80% 70%, rgba(232,155,92,0.10), transparent 40%);
-      pointer-events: none;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23C4785A' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.4;
     }
-    .hero::after {
-      content: '';
-      position: absolute; left: 0; right: 0; bottom: 0; height: 30%;
-      background: linear-gradient(to top, rgba(0,0,0,0.35), transparent);
-      pointer-events: none;
-    }
-    /* SVG Saguaro silhouette layered at the bottom */
-    .hero-silhouette {
-      position: absolute; left: 0; right: 0; bottom: 0;
-      width: 100%; height: 220px;
-      opacity: 0.35;
-      pointer-events: none;
-    }
-    .hero-content { position: relative; z-index: 2; max-width: 720px; }
     .hero-tag {
-      font-size: 0.72rem; letter-spacing: 0.32em; text-transform: uppercase;
-      color: var(--sunset); margin-bottom: 1.75rem;
-      display: inline-flex; align-items: center; gap: 0.85rem;
-    }
-    .hero-tag::before, .hero-tag::after {
-      content: ''; width: 28px; height: 1px;
-      background: var(--sunset); opacity: 0.6;
+      font-size: 0.7rem; letter-spacing: 0.25em; text-transform: uppercase;
+      color: var(--clay); margin-bottom: 1.5rem;
     }
     .hero h1 {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.8rem, 7.5vw, 6rem);
-      font-weight: 300; color: var(--cream);
-      line-height: 1.02; margin-bottom: 1.75rem;
-      letter-spacing: -0.01em;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      font-weight: 300; color: var(--white);
+      line-height: 1.05; margin-bottom: 1.5rem;
     }
-    .hero h1 em {
-      color: var(--sunset); font-style: italic; font-weight: 400;
-    }
-    .hero p.lead {
-      font-size: 1.05rem; color: rgba(244, 236, 223, 0.85);
-      max-width: 540px; line-height: 1.75;
-      margin: 0 auto 2.75rem;
-      font-weight: 300;
+    .hero h1 span { color: var(--clay); font-style: italic; }
+    .hero p {
+      font-size: 1rem; color: #C8B8A8;
+      max-width: 480px; line-height: 1.8;
+      margin-bottom: 2.5rem;
     }
     .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
     .btn {
-      padding: 0.95rem 2.1rem; border-radius: 999px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.74rem; letter-spacing: 0.18em; text-transform: uppercase;
-      font-weight: 500;
+      padding: 0.85rem 2rem; border-radius: 2px;
+      font-family: 'Jost', sans-serif;
+      font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase;
       text-decoration: none; cursor: pointer;
-      transition: all 0.25s ease; border: none;
-      display: inline-flex; align-items: center; gap: 0.5rem;
+      transition: all 0.25s; border: none;
     }
-    .btn-primary {
-      background: var(--terracotta); color: var(--cream);
-      box-shadow: 0 6px 22px rgba(181, 86, 58, 0.35);
-    }
-    .btn-primary:hover {
-      background: var(--terracotta-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 10px 28px rgba(181, 86, 58, 0.45);
-    }
+    .btn-primary { background: var(--clay); color: var(--white); }
+    .btn-primary:hover { background: #B0664A; }
     .btn-outline {
-      background: transparent; color: var(--cream);
-      border: 1px solid rgba(255,255,255,0.4);
+      background: transparent; color: var(--white);
+      border: 1px solid rgba(255,255,255,0.3);
     }
-    .btn-outline:hover {
-      border-color: var(--sunset); color: var(--sunset);
-      background: rgba(232,155,92,0.08);
-    }
+    .btn-outline:hover { border-color: var(--clay); color: var(--clay); }
     .hero-scroll {
-      position: absolute; bottom: 2.25rem; left: 50%;
-      transform: translateX(-50%);
-      font-size: 0.62rem; letter-spacing: 0.32em;
-      text-transform: uppercase; color: rgba(244,236,223,0.5);
-      display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
-      z-index: 2;
+      position: absolute; bottom: 2.5rem;
+      font-size: 0.65rem; letter-spacing: 0.2em;
+      text-transform: uppercase; color: #8A7A6A;
+      display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
     }
     .scroll-line {
-      width: 1px; height: 44px;
-      background: linear-gradient(to bottom, rgba(244,236,223,0.6), transparent);
-      animation: scrollPulse 2.4s ease-in-out infinite;
-    }
-    @keyframes scrollPulse {
-      0%, 100% { opacity: 0.3; transform: scaleY(0.6); transform-origin: top; }
-      50%      { opacity: 1;   transform: scaleY(1); }
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, #8A7A6A, transparent);
     }
 
     /* ── SECTION BASE ── */
-    section { padding: 7rem 2rem; position: relative; }
-    .container { max-width: 1180px; margin: 0 auto; }
+    section { padding: 6rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
     .section-label {
-      font-size: 0.66rem; letter-spacing: 0.34em; text-transform: uppercase;
-      color: var(--terracotta); margin-bottom: 1.1rem;
-      font-weight: 500;
+      font-size: 0.65rem; letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--clay); margin-bottom: 1rem;
     }
     .section-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(2.1rem, 4.8vw, 3.6rem);
-      font-weight: 400; line-height: 1.08;
-      margin-bottom: 1.4rem;
-      letter-spacing: -0.01em;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 300; line-height: 1.1;
+      margin-bottom: 1.5rem;
     }
-    .section-title em { color: var(--terracotta); font-style: italic; }
     .section-sub {
-      color: var(--muted); font-size: 1rem;
-      line-height: 1.85; max-width: 600px;
+      color: var(--muted); font-size: 0.95rem;
+      line-height: 1.8; max-width: 560px;
     }
     .divider {
-      width: 56px; height: 1px;
-      background: var(--terracotta); margin: 1.75rem 0;
-    }
-
-    /* ── INTRO STRIP ── */
-    .intro {
-      background: var(--cream);
-      text-align: center;
-    }
-    .intro-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 2rem; margin-top: 4rem;
-      padding-top: 3rem;
-      border-top: 1px solid var(--border);
-    }
-    .stat-num {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 2.6rem; color: var(--terracotta);
-      font-weight: 400; line-height: 1;
-    }
-    .stat-label {
-      font-size: 0.7rem; letter-spacing: 0.2em; text-transform: uppercase;
-      color: var(--muted); margin-top: 0.6rem;
+      width: 48px; height: 1px;
+      background: var(--clay); margin: 2rem 0;
     }
 
     /* ── ROOMS ── */
-    .rooms-bg {
-      background: linear-gradient(180deg, var(--cream) 0%, var(--sand) 100%);
-    }
+    .rooms-bg { background: var(--sand); }
     .rooms-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 1.5rem; margin-top: 3.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2px; margin-top: 3.5rem;
     }
     .room-card {
-      background: var(--cream);
-      border: 1px solid var(--border);
-      border-radius: 4px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex; flex-direction: column;
+      background: var(--white);
+      padding: 2.5rem 2rem;
+      border-bottom: 3px solid transparent;
+      transition: border-color 0.25s;
     }
-    .room-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 18px 40px -20px rgba(28,20,16,0.25);
-    }
-    .room-visual {
-      height: 220px;
-      position: relative; overflow: hidden;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 3.6rem;
-    }
-    .room-visual.desert  { background: linear-gradient(135deg, #D89A6F 0%, #B5563A 100%); }
-    .room-visual.vista   { background: linear-gradient(135deg, #6B3A24 0%, #B5563A 60%, #E89B5C 100%); }
-    .room-visual.casita  { background: linear-gradient(135deg, #C9A66B 0%, #D89A6F 100%); }
-    .room-visual.penthouse { background: linear-gradient(135deg, #2D241D 0%, #6B3A24 60%, #C9A66B 100%); }
-    .room-visual::after {
-      content: ''; position: absolute; inset: 0;
-      background-image:
-        radial-gradient(circle at 30% 70%, rgba(255,255,255,0.18), transparent 50%);
-    }
-    .room-visual span { position: relative; z-index: 1; filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25)); }
-    .room-body { padding: 2rem 1.85rem; display: flex; flex-direction: column; flex: 1; }
+    .room-card:hover { border-color: var(--clay); }
+    .room-icon { font-size: 2rem; margin-bottom: 1rem; }
     .room-name {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.6rem; font-weight: 500;
-      margin-bottom: 0.35rem;
+      font-size: 1.5rem; font-weight: 600;
+      margin-bottom: 0.5rem;
     }
     .room-price {
-      font-size: 0.72rem; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--terracotta);
-      margin-bottom: 1rem; font-weight: 500;
+      font-size: 0.7rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: var(--clay);
+      margin-bottom: 1rem;
     }
-    .room-desc {
-      font-size: 0.92rem; color: var(--muted);
-      line-height: 1.75; flex: 1;
-    }
-    .room-meta {
-      display: flex; gap: 1.25rem; margin-top: 1.25rem;
-      padding-top: 1.25rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.72rem; color: var(--muted);
-      letter-spacing: 0.08em; text-transform: uppercase;
-    }
+    .room-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.7; }
 
     /* ── AMENITIES ── */
     .amenities-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1rem; margin-top: 3rem;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem; margin-top: 3.5rem;
     }
     .amenity {
       display: flex; align-items: flex-start; gap: 1rem;
-      padding: 1.6rem 1.4rem;
-      background: var(--cream);
-      border: 1px solid var(--border);
-      border-radius: 3px;
-      transition: border-color 0.25s, transform 0.25s;
+      padding: 1.5rem; border: 1px solid var(--border);
     }
-    .amenity:hover {
-      border-color: var(--terracotta);
-      transform: translateY(-3px);
-    }
-    .amenity-icon {
-      font-size: 1.5rem; flex-shrink: 0;
-      width: 42px; height: 42px;
-      display: flex; align-items: center; justify-content: center;
-      background: var(--sand); border-radius: 50%;
-    }
+    .amenity-icon { font-size: 1.4rem; flex-shrink: 0; }
     .amenity-name {
-      font-size: 0.92rem; font-weight: 500;
-      margin-bottom: 0.25rem; color: var(--ink);
+      font-size: 0.85rem; font-weight: 500;
+      margin-bottom: 0.25rem;
     }
-    .amenity-detail {
-      font-size: 0.8rem; color: var(--muted); line-height: 1.55;
-    }
-
-    /* ── DINING ── */
-    .dining-bg { background: var(--sand); }
-    .dining-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem; margin-top: 3rem;
-    }
-    .dining-card {
-      background: var(--cream);
-      padding: 2.25rem 2rem;
-      border-left: 3px solid var(--terracotta);
-      border-radius: 2px;
-    }
-    .dining-name {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.55rem; font-weight: 500;
-      margin-bottom: 0.4rem;
-    }
-    .dining-tag {
-      font-size: 0.7rem; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--gold);
-      margin-bottom: 1rem;
-    }
-    .dining-desc { color: var(--muted); font-size: 0.92rem; line-height: 1.75; }
-    .dining-hours {
-      margin-top: 1.25rem; padding-top: 1.25rem;
-      border-top: 1px solid var(--border);
-      font-size: 0.82rem; color: var(--charcoal);
-    }
+    .amenity-detail { font-size: 0.78rem; color: var(--muted); }
 
     /* ── CONCIERGE / BOT ── */
     .concierge-bg {
-      background: linear-gradient(135deg, #1C1410 0%, #3D241A 60%, #6B3A24 100%);
-      color: var(--cream); position: relative; overflow: hidden;
-    }
-    .concierge-bg::before {
-      content: ''; position: absolute; inset: 0;
-      background-image:
-        radial-gradient(circle at 80% 20%, rgba(232,155,92,0.18), transparent 40%),
-        radial-gradient(circle at 10% 90%, rgba(201,166,107,0.10), transparent 40%);
-      pointer-events: none;
+      background: linear-gradient(135deg, #2B1F17 0%, #3D2B1F 100%);
+      color: var(--white);
     }
     .concierge-inner {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4.5rem; align-items: center;
-      position: relative; z-index: 1;
+      gap: 4rem; align-items: center;
     }
-    .concierge-bg .section-title { color: var(--cream); }
-    .concierge-bg .section-sub { color: rgba(244,236,223,0.7); }
-    .concierge-bg .section-label { color: var(--sunset); }
-    .concierge-bg .divider { background: var(--sunset); }
-    .concierge-features { list-style: none; margin-top: 2.25rem; }
+    .concierge-bg .section-title { color: var(--white); }
+    .concierge-bg .section-sub { color: #B8A898; }
+    .concierge-bg .divider { background: var(--clay); }
+    .concierge-features { list-style: none; margin-top: 2rem; }
     .concierge-features li {
-      display: flex; align-items: center; gap: 0.85rem;
-      font-size: 0.93rem; color: rgba(244,236,223,0.85);
-      padding: 0.85rem 0; border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: flex; align-items: center; gap: 0.75rem;
+      font-size: 0.88rem; color: #C8B8A8;
+      padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
     }
     .concierge-features li::before {
-      content: '◈'; color: var(--sunset); font-size: 0.7rem;
+      content: '◈'; color: var(--clay); font-size: 0.6rem;
     }
     .bot-wrapper {
       background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
-      height: 560px;
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 4px;
+      height: 520px;
       display: flex; align-items: center; justify-content: center;
       position: relative; overflow: hidden;
-      backdrop-filter: blur(8px);
     }
-    .bot-wrapper::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(232,155,92,0.06), transparent 60%);
-      pointer-events: none;
+    .bot-placeholder {
+      text-align: center; color: #8A7A6A;
+      font-size: 0.85rem; line-height: 1.8;
     }
+    .bot-placeholder span { display: block; font-size: 2rem; margin-bottom: 1rem; }
 
     /* ── LOCATION ── */
     .location-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 4rem; align-items: stretch;
+      gap: 4rem; align-items: center;
       margin-top: 3rem;
     }
     .location-list { list-style: none; margin-top: 1.5rem; }
     .location-list li {
-      display: flex; justify-content: space-between; align-items: center;
-      padding: 1rem 0; border-bottom: 1px solid var(--border);
-      font-size: 0.92rem;
-      gap: 1rem;
+      display: flex; justify-content: space-between;
+      padding: 0.9rem 0; border-bottom: 1px solid var(--border);
+      font-size: 0.88rem;
     }
-    .location-list li > span:first-child {
-      display: inline-flex; align-items: center; gap: 0.6rem;
-      color: var(--charcoal); font-weight: 500;
-      font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase;
-    }
-    .location-list li > span:last-child {
-      color: var(--muted); text-align: right;
-    }
-    .map-card {
-      background: linear-gradient(135deg, var(--sand) 0%, #E8DCC4 100%);
+    .location-list li span:last-child { color: var(--muted); }
+    .map-placeholder {
+      background: var(--sand);
       border: 1px solid var(--border);
-      border-radius: 6px;
-      min-height: 380px;
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      color: var(--charcoal); font-size: 0.9rem;
-      position: relative; overflow: hidden;
-      padding: 2rem;
-    }
-    .map-pin {
-      font-size: 2.2rem; margin-bottom: 1rem;
-      filter: drop-shadow(0 3px 8px rgba(181,86,58,0.4));
-    }
-    .map-address {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.4rem; text-align: center; line-height: 1.4;
-      margin-bottom: 0.5rem;
-    }
-    .map-coords {
-      font-size: 0.72rem; letter-spacing: 0.18em;
-      text-transform: uppercase; color: var(--muted);
+      height: 320px;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted); font-size: 0.85rem;
+      border-radius: 2px;
     }
 
     /* ── FOOTER ── */
     footer {
-      background: var(--ink); color: rgba(244,236,223,0.55);
-      padding: 4rem 2rem 2rem;
+      background: var(--dark); color: #8A7A6A;
+      padding: 3rem 2rem;
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; gap: 1rem;
     }
-    .footer-grid {
-      max-width: 1180px; margin: 0 auto;
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1fr;
-      gap: 3rem;
-      padding-bottom: 3rem;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-    }
-    .footer-brand .footer-logo {
+    .footer-logo {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 1.7rem; color: var(--cream);
-      font-weight: 400; letter-spacing: 0.02em;
-      margin-bottom: 1rem;
+      font-size: 1.8rem; color: var(--white);
+      font-weight: 300; letter-spacing: 0.06em;
     }
-    .footer-brand p {
-      font-size: 0.85rem; line-height: 1.75; max-width: 320px;
-    }
-    .footer-col h4 {
-      font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase;
-      color: var(--cream); margin-bottom: 1.1rem;
-      font-weight: 500;
-    }
-    .footer-col ul { list-style: none; }
-    .footer-col li { padding: 0.35rem 0; }
-    .footer-col a {
-      font-size: 0.85rem; color: rgba(244,236,223,0.55);
+    footer p { font-size: 0.78rem; line-height: 1.8; }
+    .footer-links { display: flex; gap: 2rem; }
+    .footer-links a {
+      font-size: 0.72rem; letter-spacing: 0.15em;
+      text-transform: uppercase; color: #8A7A6A;
       text-decoration: none; transition: color 0.2s;
     }
-    .footer-col a:hover { color: var(--sunset); }
-    .footer-bottom {
-      max-width: 1180px; margin: 0 auto;
-      display: flex; justify-content: space-between; align-items: center;
-      padding-top: 2rem;
-      font-size: 0.74rem;
-      flex-wrap: wrap; gap: 1rem;
-    }
+    .footer-links a:hover { color: var(--clay); }
 
     /* ── RESPONSIVE ── */
-    @media (max-width: 900px) {
-      .intro-stats { grid-template-columns: repeat(2, 1fr); }
-      .concierge-inner { grid-template-columns: 1fr; gap: 3rem; }
-      .location-grid { grid-template-columns: 1fr; gap: 2rem; }
-      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
-    }
-    @media (max-width: 640px) {
-      nav { padding: 1rem 1.25rem; }
+    @media (max-width: 768px) {
+      nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
-      section { padding: 5rem 1.25rem; }
-      .hero { padding: 6rem 1.25rem 4rem; }
-      .bot-wrapper { height: 460px; }
-      .footer-grid { grid-template-columns: 1fr; }
-      .footer-bottom { flex-direction: column; text-align: center; }
+      .concierge-inner { grid-template-columns: 1fr; }
+      .location-grid { grid-template-columns: 1fr; }
+      .bot-wrapper { height: 420px; }
     }
   </style>
 </head>
@@ -508,66 +266,28 @@
 
   <!-- NAV -->
   <nav>
-    <a href="#" class="nav-logo">
-      <span class="nav-logo-mark">H</span>
-      <span>Heart of the Southwest</span>
-    </a>
+    <a href="#" class="nav-logo">Hotel Santa Fe</a>
     <ul class="nav-links">
       <li><a href="#rooms">Rooms</a></li>
       <li><a href="#amenities">Amenities</a></li>
-      <li><a href="#dining">Dining</a></li>
       <li><a href="#concierge">Concierge</a></li>
       <li><a href="#location">Location</a></li>
     </ul>
-    <a href="#concierge" class="btn btn-primary" style="padding:0.65rem 1.4rem;">Book a Stay</a>
+    <a href="#rooms" class="btn btn-primary" style="padding:0.6rem 1.4rem;">Book a Room</a>
   </nav>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero-content">
-      <p class="hero-tag">Tucson, Arizona · Est. 2017</p>
-      <h1>Where the desert <em>breathes</em><br>and stillness lives.</h1>
-      <p class="lead">A boutique sanctuary at the foot of the Santa Catalina Mountains — where Sonoran sunsets, handcrafted hospitality, and modern luxury meet.</p>
-      <div class="hero-btns">
-        <a href="#rooms" class="btn btn-primary">Explore Rooms</a>
-        <a href="#concierge" class="btn btn-outline">Meet Sage, Our Concierge</a>
-      </div>
+    <p class="hero-tag">Santa Fe, New Mexico · Est. 2019</p>
+    <h1>A <span>sanctuary</span><br>in the desert</h1>
+    <p>Boutique luxury in the heart of Santa Fe — where southwestern soul meets modern comfort.</p>
+    <div class="hero-btns">
+      <a href="#rooms" class="btn btn-primary">View Rooms</a>
+      <a href="#concierge" class="btn btn-outline">24/7 Concierge</a>
     </div>
-    <svg class="hero-silhouette" viewBox="0 0 1440 220" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill="#1C1410" d="M0,220 L0,160 Q60,150 100,158 L120,158 L120,90 Q120,80 130,80 Q140,80 140,90 L140,120 Q140,130 150,130 L160,130 Q170,130 170,120 L170,100 Q170,90 180,90 Q190,90 190,100 L190,158 L240,158 L240,170 L320,170 Q360,140 400,160 L500,160 L500,60 Q500,48 514,48 Q528,48 528,60 L528,100 Q528,112 540,112 L552,112 Q564,112 564,100 L564,80 Q564,68 576,68 Q588,68 588,80 L588,160 L660,160 L740,150 L820,160 L900,150 L980,160 L1060,150 L1140,160 L1180,158 L1180,100 Q1180,90 1190,90 Q1200,90 1200,100 L1200,130 Q1200,140 1210,140 L1218,140 Q1228,140 1228,130 L1228,110 Q1228,100 1238,100 Q1248,100 1248,110 L1248,158 L1320,160 Q1380,150 1440,160 L1440,220 Z"/>
-    </svg>
     <div class="hero-scroll">
       <div class="scroll-line"></div>
       Scroll
-    </div>
-  </section>
-
-  <!-- INTRO -->
-  <section class="intro">
-    <div class="container">
-      <p class="section-label">Welcome</p>
-      <h2 class="section-title" style="margin-left:auto;margin-right:auto;">Hospitality, the way it<br>used to be — only <em>better</em>.</h2>
-      <p class="section-sub" style="margin-left:auto;margin-right:auto;text-align:center;">
-        Forty-eight rooms. Two restaurants. One unforgettable corner of the desert. Heart of the Southwest is a family-owned boutique hotel where every guest is greeted by name — and where a 24/7 AI concierge means you're never more than a question away from the perfect recommendation.
-      </p>
-      <div class="intro-stats">
-        <div>
-          <div class="stat-num">48</div>
-          <div class="stat-label">Rooms &amp; Suites</div>
-        </div>
-        <div>
-          <div class="stat-num">2017</div>
-          <div class="stat-label">Year Established</div>
-        </div>
-        <div>
-          <div class="stat-num">4.8★</div>
-          <div class="stat-label">Guest Rating</div>
-        </div>
-        <div>
-          <div class="stat-num">24/7</div>
-          <div class="stat-label">AI Concierge</div>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -575,51 +295,27 @@
   <section class="rooms-bg" id="rooms">
     <div class="container">
       <p class="section-label">Accommodations</p>
-      <h2 class="section-title">Rooms shaped by<br>the <em>desert itself</em>.</h2>
-      <p class="section-sub">Every room is a study in Southwestern texture — vigas overhead, kiva fireplaces below, and windows that frame the Catalinas like living paintings. Egyptian-cotton linens, locally roasted Tucson coffee, and Malin+Goetz amenities throughout.</p>
+      <h2 class="section-title">Our rooms &amp;<br>suites</h2>
+      <p class="section-sub">Every room is designed to reflect the warmth and texture of the Southwest — handcrafted details, earthy palettes, and views that stay with you.</p>
       <div class="rooms-grid">
-
         <div class="room-card">
-          <div class="room-visual desert"><span>🌵</span></div>
-          <div class="room-body">
-            <div class="room-name">Saguaro Room</div>
-            <div class="room-price">From $189 / night</div>
-            <p class="room-desc">A serene queen room with a private patio, hand-troweled plaster walls, and a rainfall shower clad in Saltillo tile. Ideal for solo travelers or couples.</p>
-            <div class="room-meta"><span>Sleeps 2</span><span>320 sq ft</span></div>
-          </div>
+          <div class="room-icon">🌵</div>
+          <div class="room-name">Desert Room</div>
+          <div class="room-price">From $159 / night</div>
+          <p class="room-desc">A cozy queen room with southwest décor, exposed wood beams, terracotta tones, and a rainfall shower. Sleeps 2.</p>
         </div>
-
         <div class="room-card">
-          <div class="room-icon"></div>
-          <div class="room-visual vista"><span>🌄</span></div>
-          <div class="room-body">
-            <div class="room-name">Catalina Vista Suite</div>
-            <div class="room-price">From $279 / night</div>
-            <p class="room-desc">King bed with a private balcony framing the Santa Catalina Mountains. Soaking tub, separate walk-in shower, and an in-room espresso bar.</p>
-            <div class="room-meta"><span>Sleeps 2</span><span>520 sq ft</span></div>
-          </div>
+          <div class="room-icon">🌄</div>
+          <div class="room-name">Vista Suite</div>
+          <div class="room-price">From $229 / night</div>
+          <p class="room-desc">King bed with a private balcony overlooking the Sangre de Cristo mountains. Includes a soaking tub and walk-in shower.</p>
         </div>
-
         <div class="room-card">
-          <div class="room-visual casita"><span>🏜️</span></div>
-          <div class="room-body">
-            <div class="room-name">Adobe Casita</div>
-            <div class="room-price">From $349 / night</div>
-            <p class="room-desc">A standalone two-room casita with a kiva fireplace, fenced courtyard, and outdoor soaking tub. Perfect for families or longer stays.</p>
-            <div class="room-meta"><span>Sleeps 4</span><span>720 sq ft</span></div>
-          </div>
+          <div class="room-icon">☀️</div>
+          <div class="room-name">Rooftop Penthouse</div>
+          <div class="room-price">From $389 / night</div>
+          <p class="room-desc">Our flagship suite with exclusive rooftop terrace access, panoramic views, and a fully stocked minibar. Perfect for special occasions.</p>
         </div>
-
-        <div class="room-card">
-          <div class="room-visual penthouse"><span>☀️</span></div>
-          <div class="room-body">
-            <div class="room-name">Sunset Penthouse</div>
-            <div class="room-price">From $549 / night</div>
-            <p class="room-desc">Our flagship suite, with private rooftop terrace, panoramic Sonoran views, fully stocked minibar, and dedicated concierge service for the duration of your stay.</p>
-            <div class="room-meta"><span>Sleeps 4</span><span>1,100 sq ft</span></div>
-          </div>
-        </div>
-
       </div>
     </div>
   </section>
@@ -628,50 +324,65 @@
   <section id="amenities">
     <div class="container">
       <p class="section-label">The Experience</p>
-      <h2 class="section-title">Everything you need —<br>and a few things <em>you didn't</em>.</h2>
+      <h2 class="section-title">Everything<br>you need</h2>
       <div class="divider"></div>
-      <p class="section-sub">All stays include complimentary artisan breakfast, high-speed WiFi, valet parking, and unrestricted access to our amenities, gardens, and saltwater pool.</p>
+      <p class="section-sub">All rooms include complimentary breakfast, free high-speed WiFi, and access to our full range of hotel amenities.</p>
       <div class="amenities-grid">
-        <div class="amenity"><div class="amenity-icon">🏊</div><div><div class="amenity-name">Saltwater Pool</div><div class="amenity-detail">Heated year-round · 6 AM – 10 PM</div></div></div>
-        <div class="amenity"><div class="amenity-icon">💆</div><div><div class="amenity-name">Mesquite Spa</div><div class="amenity-detail">Massage, facials, desert botanical treatments</div></div></div>
-        <div class="amenity"><div class="amenity-icon">🍳</div><div><div class="amenity-name">Artisan Breakfast</div><div class="amenity-detail">Daily 6:30 – 10:30 AM · Included</div></div></div>
-        <div class="amenity"><div class="amenity-icon">🍹</div><div><div class="amenity-name">Mirador Rooftop Bar</div><div class="amenity-detail">Wed – Sun · 4 PM – 12 AM</div></div></div>
-        <div class="amenity"><div class="amenity-icon">🚲</div><div><div class="amenity-name">Complimentary Bikes</div><div class="amenity-detail">Cruisers &amp; e-bikes · 7 AM – 7 PM</div></div></div>
-        <div class="amenity"><div class="amenity-icon">🐾</div><div><div class="amenity-name">Pet Friendly</div><div class="amenity-detail">Up to 2 dogs, 60 lbs · $35 / night</div></div></div>
-        <div class="amenity"><div class="amenity-icon">🅿️</div><div><div class="amenity-name">Valet &amp; EV Charging</div><div class="amenity-detail">Complimentary · 4 Tesla / J-1772 chargers</div></div></div>
-        <div class="amenity"><div class="amenity-icon">💪</div><div><div class="amenity-name">Fitness Studio</div><div class="amenity-detail">Peloton, weights, yoga · 24 / 7</div></div></div>
-        <div class="amenity"><div class="amenity-icon">🔥</div><div><div class="amenity-name">Courtyard Fire Pits</div><div class="amenity-detail">Lit nightly at sunset</div></div></div>
-        <div class="amenity"><div class="amenity-icon">🧺</div><div><div class="amenity-name">Same-Day Laundry</div><div class="amenity-detail">In by 9 AM · back by 6 PM</div></div></div>
-        <div class="amenity"><div class="amenity-icon">🚐</div><div><div class="amenity-name">Airport Shuttle</div><div class="amenity-detail">TUS · $25 each way · book ahead</div></div></div>
-        <div class="amenity"><div class="amenity-icon">🪴</div><div><div class="amenity-name">Desert Garden Tours</div><div class="amenity-detail">Tue &amp; Sat · 8 AM · Free</div></div></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- DINING -->
-  <section class="dining-bg" id="dining">
-    <div class="container">
-      <p class="section-label">Dining</p>
-      <h2 class="section-title">Two restaurants.<br>One <em>obsession</em> with the Sonoran.</h2>
-      <p class="section-sub">From wood-fired mesquite plates to a rooftop bar with the best sunset in Tucson, every menu is built around what's growing — and ranching — within 200 miles.</p>
-      <div class="dining-grid">
-        <div class="dining-card">
-          <div class="dining-name">Coyote &amp; Sage</div>
-          <div class="dining-tag">Signature · Farm-to-Table</div>
-          <p class="dining-desc">Chef Marisol Vega's love letter to the Sonoran Desert: heritage corn, mesquite-grilled meats, and a tasting menu that changes with what the local farms bring in. Reservations strongly recommended.</p>
-          <div class="dining-hours"><strong>Dinner</strong> · Tue – Sun · 5:30 – 10 PM<br><strong>Brunch</strong> · Sat &amp; Sun · 9 AM – 1 PM</div>
+        <div class="amenity">
+          <div class="amenity-icon">🏊</div>
+          <div>
+            <div class="amenity-name">Heated Pool</div>
+            <div class="amenity-detail">Open daily 8 AM – 9 PM</div>
+          </div>
         </div>
-        <div class="dining-card">
-          <div class="dining-name">Mirador Rooftop</div>
-          <div class="dining-tag">Cocktails · Small Plates</div>
-          <p class="dining-desc">Our open-air rooftop lounge: prickly-pear margaritas, mezcal flights, and a small-plates menu designed to share. The best perch in town for the sunset.</p>
-          <div class="dining-hours"><strong>Bar</strong> · Wed – Sun · 4 PM – 12 AM<br><strong>Kitchen</strong> · Wed – Sun · 4 – 10 PM</div>
+        <div class="amenity">
+          <div class="amenity-icon">💆</div>
+          <div>
+            <div class="amenity-name">Full Spa</div>
+            <div class="amenity-detail">Massages, facials &amp; body treatments</div>
+          </div>
         </div>
-        <div class="dining-card">
-          <div class="dining-name">Mesa Café</div>
-          <div class="dining-tag">All-Day · Casual</div>
-          <p class="dining-desc">Our breakfast and lunch room, off the lobby. Locally roasted Yellow Brick coffee, house-baked pastries, breakfast burritos, and a daily green-chile stew.</p>
-          <div class="dining-hours"><strong>Daily</strong> · 6:30 AM – 3 PM<br><strong>Breakfast included</strong> for hotel guests</div>
+        <div class="amenity">
+          <div class="amenity-icon">🍳</div>
+          <div>
+            <div class="amenity-name">Free Breakfast</div>
+            <div class="amenity-detail">Served daily 7 – 10:30 AM</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🍹</div>
+          <div>
+            <div class="amenity-name">Rooftop Bar</div>
+            <div class="amenity-detail">Wed – Sun, 4 PM – 11 PM</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🚲</div>
+          <div>
+            <div class="amenity-name">Free Bike Rentals</div>
+            <div class="amenity-detail">Daily 8 AM – 6 PM</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🐾</div>
+          <div>
+            <div class="amenity-name">Pet Friendly</div>
+            <div class="amenity-detail">Up to 2 pets, under 50 lbs</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">🅿️</div>
+          <div>
+            <div class="amenity-name">Free Parking</div>
+            <div class="amenity-detail">On-site + EV charging</div>
+          </div>
+        </div>
+        <div class="amenity">
+          <div class="amenity-icon">💪</div>
+          <div>
+            <div class="amenity-name">Fitness Room</div>
+            <div class="amenity-detail">Open 24 / 7</div>
+          </div>
         </div>
       </div>
     </div>
@@ -682,17 +393,16 @@
     <div class="container">
       <div class="concierge-inner">
         <div>
-          <p class="section-label">Virtual Concierge</p>
-          <h2 class="section-title">Meet <em>Sage</em> —<br>your 24 / 7<br>desert guide.</h2>
+          <p class="section-label" style="color:var(--clay)">Virtual Concierge</p>
+          <h2 class="section-title">Your personal<br>assistant,<br><em style="font-style:italic">24 / 7</em></h2>
           <div class="divider"></div>
-          <p class="section-sub">Sage is our AI concierge, trained on every detail of the hotel, the menus, the trails, and the town. Ask anything — at any hour, in any language.</p>
+          <p class="section-sub">Our AI concierge is always available — whether it's 2 PM or 2 AM. Ask anything about your stay.</p>
           <ul class="concierge-features">
-            <li>Check availability &amp; book a room</li>
-            <li>Reserve a table at Coyote &amp; Sage or Mirador</li>
-            <li>Schedule a spa treatment or yoga session</li>
-            <li>Get sunset-timed hike recommendations</li>
-            <li>Arrange airport shuttle or rental car pickup</li>
-            <li>Anything else — Sage doesn't sleep</li>
+            <li>Check-in &amp; check-out information</li>
+            <li>Room availability &amp; upgrades</li>
+            <li>Spa bookings &amp; dining reservations</li>
+            <li>Local restaurant &amp; activity recommendations</li>
+            <li>Anything else — just ask</li>
           </ul>
         </div>
         <div class="bot-wrapper" id="bot-container">
@@ -704,7 +414,9 @@
                     verify: { projectID: '69ba9d28f7c5119bfd15f7ff' },
                     url: 'https://general-runtime.voiceflow.com',
                     versionID: 'production',
-                    voice: { url: "https://runtime-api.voiceflow.com" }
+                    voice: {
+                      url: "https://runtime-api.voiceflow.com"
+                    }
                   });
                 }
                 v.src = "https://cdn.voiceflow.com/widget-next/bundle.mjs"; v.type = "text/javascript"; s.parentNode.insertBefore(v, s);
@@ -719,23 +431,20 @@
   <section id="location">
     <div class="container">
       <p class="section-label">Find Us</p>
-      <h2 class="section-title">At the <em>foot</em> of the<br>Santa Catalinas.</h2>
+      <h2 class="section-title">In the heart<br>of Santa Fe</h2>
       <div class="location-grid">
         <div>
-          <p class="section-sub">Twelve minutes from downtown Tucson, eight from the airport, and two miles from Sabino Canyon. The Sonoran Desert begins at our doorstep.</p>
+          <p class="section-sub">Steps from Canyon Road, the Georgia O'Keeffe Museum, and the best green chile in New Mexico.</p>
           <ul class="location-list">
-            <li><span>📍 Address</span><span>1428 N Saguaro Boulevard<br>Tucson, AZ 85718</span></li>
-            <li><span>📞 Phone</span><span>(520) 555-0184</span></li>
-            <li><span>✉️ Email</span><span>hello@heartsouthwest.com</span></li>
-            <li><span>🕐 Front Desk</span><span>24 hours · daily</span></li>
-            <li><span>✈️ Nearest Airport</span><span>Tucson Intl. (TUS) · 14 mi</span></li>
-            <li><span>🅿️ Parking</span><span>Complimentary valet</span></li>
+            <li><span>📍 Address</span><span>218 Don Gaspar Ave, Santa Fe NM</span></li>
+            <li><span>📞 Phone</span><span>(505) 555-0192</span></li>
+            <li><span>✉️ Email</span><span>hello@hotelsantafe.com</span></li>
+            <li><span>🕐 Front Desk</span><span>7 AM – 11 PM daily</span></li>
+            <li><span>🅿️ Parking</span><span>Free on-site</span></li>
           </ul>
         </div>
-        <div class="map-card">
-          <div class="map-pin">📍</div>
-          <div class="map-address">1428 N Saguaro Blvd<br>Tucson, Arizona</div>
-          <div class="map-coords">32.2540° N · 110.8910° W</div>
+        <div class="map-placeholder">
+          📍 218 Don Gaspar Ave, Santa Fe
         </div>
       </div>
     </div>
@@ -743,40 +452,15 @@
 
   <!-- FOOTER -->
   <footer>
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="footer-logo">Heart of the Southwest</div>
-        <p>A family-owned boutique hotel at the edge of the Sonoran Desert. Forty-eight rooms, two restaurants, and one extraordinary view of the Catalinas.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Stay</h4>
-        <ul>
-          <li><a href="#rooms">Rooms &amp; Suites</a></li>
-          <li><a href="#amenities">Amenities</a></li>
-          <li><a href="#dining">Dining</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <ul>
-          <li><a href="tel:+15205550184">(520) 555-0184</a></li>
-          <li><a href="mailto:hello@heartsouthwest.com">hello@heartsouthwest.com</a></li>
-          <li><a href="#concierge">Ask Sage 24/7</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Visit</h4>
-        <ul>
-          <li>1428 N Saguaro Blvd</li>
-          <li>Tucson, AZ 85718</li>
-          <li>Open 365 days/year</li>
-        </ul>
-      </div>
+    <div class="footer-logo">Hotel Santa Fe</div>
+    <p>218 Don Gaspar Ave · Santa Fe, NM 87501<br>hello@hotelsantafe.com · (505) 555-0192</p>
+    <div class="footer-links">
+      <a href="#rooms">Rooms</a>
+      <a href="#amenities">Amenities</a>
+      <a href="#concierge">Concierge</a>
+      <a href="#location">Location</a>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Heart of the Southwest Hotel · All rights reserved.</span>
-      <span>Crafted with care in Tucson, Arizona.</span>
-    </div>
+    <p style="margin-top:1rem; font-size:0.7rem;">© 2024 Hotel Santa Fe. All rights reserved.</p>
   </footer>
 
 </body>

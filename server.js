@@ -11,5 +11,5 @@ app.get('/', (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Heart of the Southwest Hotel server running at http://localhost:${PORT}`);
+  console.log(`Hotel Vista server running at http://localhost:${PORT}`);
 });

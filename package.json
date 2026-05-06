@@ -1,7 +1,7 @@
 {
-  "name": "heart-of-the-southwest-hotel",
+  "name": "hotel-vista",
   "version": "1.0.0",
-  "description": "Heart of the Southwest Hotel website served with Node.js/Express",
+  "description": "Hotel Santa Fe website served with Node.js/Express",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
